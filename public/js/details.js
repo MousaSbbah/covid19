@@ -1,0 +1,3 @@
+$('.updateBtn').click(()=>{
+  $('.updateForm').toggle();
+})

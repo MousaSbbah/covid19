@@ -1,0 +1,13 @@
+main{
+    width: 90%;
+    margin: auto;
+}
+
+.all{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.record{
+    padding: 50px 0;
+}

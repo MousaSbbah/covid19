@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/myRecords">My Records</a></li>
+            <li><a href="/allCountries">All Countries</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1><%= data.country %>  </h1>
+        <h2><%= data.date %> </h2>
+        <p>Total Confirmed : <%= data.totalconfirmed %> </p>
+        <p>Total deaths : <%= data.totaldeaths %></p>
+        <p>Total recovered : <%= data.totalrecovered %></p>
+
+        <button class="updateBtn">UPDATE</button>
+        <form action="/delete/<%= data.id %>?_method=delete " method="post">
+        <input type="submit" value="DELETE">
+        </form>
+        <form class="updateForm" action="/updateRecord/<%= data.id %>?_method=put " method="post">
+        <input type="text" name="country" id="" value=<%= data.country %> >
+        <input type="date" name="date" id="" value=<%= data.date %>>
+        <input type="number" name="totalconfirmed" id="" value=<%= data.totalconfirmed %>>
+        <input type="number" name="totaldeaths" id="" value=<%= data.totaldeaths %>>
+        <input type="number" name="totalrecovered" id="" value=<%= data.totalrecovered %>>
+        <input type="submit" value="save">
+        </form>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="../js/details.js"></script>
+</body>
+</html>

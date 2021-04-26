@@ -1,0 +1,19 @@
+main{
+    width: 90%;
+    margin: auto;
+}
+
+.all{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.oneCountry h1 {
+    font-size: 24px;
+}
+.oneCountry h2 {
+    font-size: 18;
+}
+.oneCountry h3 {
+    font-size: 18;
+}

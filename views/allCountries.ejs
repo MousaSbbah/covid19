@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/myRecords">My Records</a></li>
+            <li><a href="/allCountries">All Countries</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="all">
+
+            <% countries.forEach(obj => { %>
+             <div class="oneCountry">
+                <h1><%= obj.Country %> </h1>
+                <h2><%= obj.Date %> </h2>
+                <h3>Total Confirmed</h3><p><%= obj.TotalConfirmed %></p> 
+                <h3>Total Deaths</h3><p><%= obj.TotalDeaths %></p> 
+                <h3>Total Recovered</h3><p><%= obj.TotalRecovered %></p> 
+                
+                <form action="/addRecords" method="POST">
+                    <input type="hidden" name="Country" id="" value=<%= obj.Country %>>
+                    <input type="hidden" name="Date" id="" value=<%= obj.Date %>>
+                    <input type="hidden" name="TotalConfirmed" id="" value=<%= obj.TotalConfirmed %>>
+                    <input type="hidden" name="TotalDeaths" id="" value=<%= obj.TotalDeaths %>>
+                    <input type="hidden" name="TotalRecovered" id="" value=<%= obj.TotalRecovered %>>
+                    <input type="submit" value="Add Record">
+                </form>
+                
+             </div>
+            <% }) %>
+
+        </div>
+    </main>
+</body>
+</html>

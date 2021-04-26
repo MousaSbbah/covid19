@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/myRecords">My Records</a></li>
+            <li><a href="/allCountries">All Countries</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="homeCards">
+
+            <div class="homeCard"><h3>Total Confirmed</h3><br><p><%= data.TotalConfirmed %></p> </div>
+            <div class="homeCard"><h3>Total Deaths</h3><br><p><%= data.TotalDeaths %></p> </div>
+            <div class="homeCard"><h3>Total Recovered</h3><br><p><%= data.TotalRecovered %></p> </div>
+        </div>
+
+        <form action="/getCountryResult" method="GET">
+        <label for="">Country<input type="text" name="country"></label>
+        <label for="">From<input type="date" name="from"></label>
+        <label for="">To<input type="date" name="to"></label>
+        <input type="submit" value="Get The Data">
+        </form>
+    </main>
+</body>
+</html>
